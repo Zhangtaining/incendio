@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background -->
+    <rect id="bg" width="512" height="512" fill="#000000"/>
+    
+    <!-- Outer glow filter -->
+    <filter id="outerGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="sparkleGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Flame base gradient -->
+    <radialGradient id="glowAura" cx="50%" cy="75%" r="50%">
+      <stop offset="0%" stop-color="#FF6600" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FF4500" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Main body gradient -->
+    <linearGradient id="mainBodyGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#6F0000"/>
+      <stop offset="25%" stop-color="#CC2200"/>
+      <stop offset="55%" stop-color="#FF6600"/>
+      <stop offset="80%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#FFE000"/>
+    </linearGradient>
+
+    <!-- Left swirl gradient -->
+    <linearGradient id="leftSwirlGrad" x1="0%" y1="100%" x2="60%" y2="0%">
+      <stop offset="0%" stop-color="#8B0000"/>
+      <stop offset="40%" stop-color="#FF4500"/>
+      <stop offset="100%" stop-color="#FFD700"/>
+    </linearGradient>
+
+    <!-- Right swirl gradient -->
+    <linearGradient id="rightSwirlGrad" x1="100%" y1="100%" x2="40%" y2="0%">
+      <stop offset="0%" stop-color="#8B0000"/>
+      <stop offset="40%" stop-color="#FF4500"/>
+      <stop offset="100%" stop-color="#FFA500"/>
+    </linearGradient>
+
+    <!-- Inner highlight gradient -->
+    <radialGradient id="coreGrad" cx="50%" cy="60%" r="40%">
+      <stop offset="0%" stop-color="#FFFF99" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFD700" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Sparkle gradient -->
+    <radialGradient id="sparkleGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#FFFACD"/>
+      <stop offset="100%" stop-color="rgba(255,165,0,0)" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Sparkle glow aura -->
+    <radialGradient id="sparkleAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFB300" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Black background -->
+  <rect width="512" height="512" fill="#000000"/>
+
+  <!-- Outer warm glow aura behind flame -->
+  <ellipse cx="256" cy="340" rx="110" ry="130" fill="url(#glowAura)" filter="url(#outerGlow)"/>
+
+  <!-- Flame body -->
+
+  <!-- Base broad shape: dark foundation -->
+  <path d="
+    M 195 430
+    C 175 420, 155 395, 160 365
+    C 165 335, 180 315, 200 300
+    C 215 285, 225 270, 228 250
+    C 232 265, 230 280, 240 295
+    C 250 310, 255 325, 256 345
+    C 257 325, 262 310, 272 295
+    C 282 280, 280 265, 284 250
+    C 287 270, 297 285, 312 300
+    C 332 315, 347 335, 352 365
+    C 357 395, 337 420, 317 430
+    Z
+  " fill="url(#mainBodyGrad)"/>
+
+  <!-- Left flame lick -->
+  <path d="
+    M 210 415
+    C 190 390, 175 360, 185 325
+    C 195 290, 215 265, 225 235
+    C 228 215, 224 190, 230 170
+    C 238 195, 235 225, 240 255
+    C 245 280, 248 305, 250 330
+    C 252 305, 252 275, 256 250
+    C 260 225, 262 200, 268 175
+    C 272 200, 268 228, 274 255
+    C 280 282, 282 305, 282 330
+    C 284 305, 287 280, 292 255
+    C 297 225, 294 195, 302 170
+    C 308 190, 304 215, 307 235
+    C 317 265, 337 290, 347 325
+    C 357 360, 342 390, 322 415
+    C 300 425, 280 428, 256 428
+    C 232 428, 212 425, 210 415
+    Z
+  " fill="url(#leftSwirlGrad)" opacity="0.9"/>
+
+  <!-- Central tall lick -->
+  <path d="
+    M 245 380
+    C 235 355, 232 325, 238 295
+    C 243 268, 250 245, 254 215
+    C 256 190, 255 162, 258 138
+    C 261 162, 260 190, 262 215
+    C 266 245, 273 268, 278 295
+    C 284 325, 281 355, 271 380
+    C 265 395, 256 400, 256 400
+    C 256 400, 247 395, 245 380
+    Z
+  " fill="url(#mainBodyGrad)"/>
+
+  <!-- Right flame lick -->
+  <path d="
+    M 285 360
+    C 280 335, 282 305, 290 278
+    C 298 252, 310 230, 315 205
+    C 318 222, 314 248, 318 268
+    C 325 295, 335 318, 338 348
+    C 340 368, 330 388, 315 398
+    C 302 390, 290 378, 285 360
+    Z
+  " fill="url(#rightSwirlGrad)" opacity="0.85"/>
+
+  <!-- Left small upper lick -->
+  <path d="
+    M 234 250
+    C 228 225, 226 198, 232 172
+    C 236 150, 242 132, 244 110
+    C 248 132, 246 158, 248 182
+    C 250 205, 248 228, 246 252
+    Z
+  " fill="#FFD700" opacity="0.8"/>
+
+  <!-- Top center highest lick -->
+  <path d="
+    M 253 200
+    C 250 175, 252 148, 256 122
+    C 260 148, 262 175, 259 200
+    C 258 210, 256 215, 256 215
+    C 256 215, 254 210, 253 200
+    Z
+  " fill="#FFFF99" opacity="0.9"/>
+
+  <!-- Inner bright core highlight -->
+  <ellipse cx="256" cy="300" rx="38" ry="80" fill="url(#coreGrad)"/>
+
+  <!-- Sparkle / dot -->
+
+  <!-- Sparkle soft aura glow -->
+  <circle cx="256" cy="78" r="22" fill="url(#sparkleAura)" filter="url(#sparkleGlow)"/>
+
+  <!-- 4-pointed star sparkle -->
+  <path d="
+    M 256 58
+    C 256 58, 259 68, 262 72
+    C 266 76, 276 78, 276 78
+    C 276 78, 266 80, 262 84
+    C 259 88, 256 98, 256 98
+    C 256 98, 253 88, 250 84
+    C 247 80, 237 78, 237 78
+    C 237 78, 247 76, 250 72
+    C 253 68, 256 58, 256 58
+    Z
+  " fill="url(#sparkleGrad)"/>
+
+  <!-- Sparkle bright center dot -->
+  <circle cx="256" cy="78" r="4" fill="white" opacity="0.95"/>
+</svg>
