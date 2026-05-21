@@ -276,7 +276,7 @@ h1 {
 
 .partner-strip {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -305,27 +305,13 @@ h1 {
   transform: translateY(-4px);
 }
 
-.partner-card img,
-.partner-logo {
+.partner-card img {
   width: 116px;
   height: 42px;
   padding: 7px;
   background: rgba(255, 255, 255, 0.92);
   border-radius: 6px;
-}
-
-.partner-card img {
   object-fit: contain;
-}
-
-.partner-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--charcoal);
-  font-family: var(--font-ui);
-  font-size: 0.88rem;
-  font-weight: 820;
 }
 
 .partner-card h3,
