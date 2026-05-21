@@ -484,27 +484,6 @@ h1 {
   padding: 24px 28px 30px;
 }
 
-.icon {
-  display: inline-grid;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 26px;
-  place-items: center;
-  color: var(--white);
-  background: var(--ember);
-  border-radius: 8px;
-  font-family: var(--font-ui);
-  font-weight: 820;
-}
-
-.solution-card:nth-child(2) .icon {
-  background: var(--teal);
-}
-
-.solution-card:nth-child(3) .icon {
-  background: var(--green);
-}
-
 .feature-band {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -761,10 +740,6 @@ h1 {
 
   .solution-card {
     min-height: 250px;
-  }
-
-  .icon {
-    margin-bottom: 34px;
   }
 
   .contact-link {
