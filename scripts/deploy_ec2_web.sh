@@ -9,6 +9,7 @@ fi
 HOST="$1"
 KEY_PATH="$2"
 SSH_USER="${3:-ubuntu}"
+INCENDIO_DOMAINS="${INCENDIO_DOMAINS:-incendiollc.com www.incendiollc.com}"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
@@ -43,13 +44,16 @@ COPYFILE_DISABLE=1 tar --format ustar -C "$WEB_DIR" -czf - \
   | ssh "${SSH_OPTS[@]}" "$REMOTE" "cat > '$REMOTE_RELEASE'"
 
 echo "Installing and configuring Nginx on $HOST..."
-ssh "${SSH_OPTS[@]}" "$REMOTE" "sudo bash -s" <<'REMOTE_SCRIPT'
+ssh "${SSH_OPTS[@]}" "$REMOTE" "sudo INCENDIO_DOMAINS='$INCENDIO_DOMAINS' bash -s" <<'REMOTE_SCRIPT'
 set -euo pipefail
 
 REMOTE_RELEASE="/tmp/incendio-web-release.tgz"
 REMOTE_ROOT="/var/www/incendio-web"
 NGINX_SITE="/etc/nginx/sites-available/incendio-web"
 NGINX_LINK="/etc/nginx/sites-enabled/incendio-web"
+DOMAIN_NAMES="${INCENDIO_DOMAINS:-incendiollc.com www.incendiollc.com}"
+PRIMARY_DOMAIN="${DOMAIN_NAMES%% *}"
+CERT_DIR="/etc/letsencrypt/live/$PRIMARY_DOMAIN"
 
 export DEBIAN_FRONTEND=noninteractive
 if ! command -v nginx >/dev/null 2>&1; then
@@ -63,25 +67,60 @@ chown -R www-data:www-data "$REMOTE_ROOT"
 find "$REMOTE_ROOT" -type d -exec chmod 755 {} \;
 find "$REMOTE_ROOT" -type f -exec chmod 644 {} \;
 
-cat > "$NGINX_SITE" <<'NGINX_CONF'
+if [[ -f "$CERT_DIR/fullchain.pem" && -f "$CERT_DIR/privkey.pem" ]]; then
+cat > "$NGINX_SITE" <<NGINX_CONF
 server {
   listen 80 default_server;
   listen [::]:80 default_server;
-  server_name _;
+  server_name $DOMAIN_NAMES;
+
+  return 301 https://\$host\$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  server_name $DOMAIN_NAMES;
+
+  root /var/www/incendio-web;
+  index index.html;
+
+  ssl_certificate $CERT_DIR/fullchain.pem;
+  ssl_certificate_key $CERT_DIR/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+  location / {
+    try_files \$uri \$uri/ /index.html;
+  }
+
+  location ~* \.(?:css|js|png|jpg|jpeg|gif|svg|ico|webp|avif)$ {
+    add_header Cache-Control "public, max-age=2592000, immutable";
+    try_files \$uri =404;
+  }
+}
+NGINX_CONF
+else
+cat > "$NGINX_SITE" <<NGINX_CONF
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  server_name $DOMAIN_NAMES;
 
   root /var/www/incendio-web;
   index index.html;
 
   location / {
-    try_files $uri $uri/ /index.html;
+    try_files \$uri \$uri/ /index.html;
   }
 
   location ~* \.(?:css|js|png|jpg|jpeg|gif|svg|ico|webp|avif)$ {
     add_header Cache-Control "public, max-age=2592000, immutable";
-    try_files $uri =404;
+    try_files \$uri =404;
   }
 }
 NGINX_CONF
+fi
 
 rm -f /etc/nginx/sites-enabled/default
 ln -sfn "$NGINX_SITE" "$NGINX_LINK"
@@ -92,7 +131,7 @@ systemctl reload nginx || systemctl restart nginx
 
 if command -v ufw >/dev/null 2>&1 && ufw status | grep -q "Status: active"; then
   ufw allow OpenSSH
-  ufw allow "Nginx HTTP"
+  ufw allow "Nginx Full"
 fi
 
 rm -f "$REMOTE_RELEASE"

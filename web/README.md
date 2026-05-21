@@ -25,6 +25,9 @@ site as the default HTTP server, and reloads Nginx:
 You can reuse the same command for a new EC2 instance by replacing the hostname
 and SSH key path.
 
+If the instance already has a Let's Encrypt certificate for `incendiollc.com`,
+the deploy script preserves HTTPS and redirects HTTP traffic to HTTPS.
+
 ## Run on EC2 with Docker
 
 1. Install Docker and Compose on the instance.
