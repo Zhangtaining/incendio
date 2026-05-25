@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Incendio Avatar | Real-Time AI Avatar for Live Selling</title>
+    <meta name="description" content="Incendio Avatar is a real-time AI avatar platform for live selling that helps online sellers run interactive product livestreams with a virtual host, product knowledge, automated Q&A, and human takeover control.">
+    <meta name="keywords" content="real-time AI avatar for live selling, AI livestream host, AI avatar for e-commerce, virtual livestream salesperson, AI sales avatar, live commerce AI">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://avatar.incendiollc.com/">
+    <meta property="og:title" content="Incendio Avatar | Real-Time AI Avatar for Live Selling">
+    <meta property="og:description" content="Turn your product catalog into an interactive AI livestream host with product knowledge, real-time Q&A, risk preflight, human takeover, and post-live insights.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://avatar.incendiollc.com/assets/ai-avatar-live-commerce-hero.png">
+    <meta name="theme-color" content="#100806">
+    <link rel="preload" as="image" href="assets/ai-avatar-live-commerce-hero.png">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://incendiollc.com/#organization",
+            "name": "Incendio LLC",
+            "url": "https://incendiollc.com/",
+            "description": "Incendio LLC builds AI workflows, decision tools, and digital products for practical business operations."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://avatar.incendiollc.com/#website",
+            "url": "https://avatar.incendiollc.com/",
+            "name": "Incendio Avatar",
+            "publisher": { "@id": "https://incendiollc.com/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://avatar.incendiollc.com/#software",
+            "name": "Incendio Avatar",
+            "publisher": { "@id": "https://incendiollc.com/#organization" },
+            "brand": {
+              "@type": "Brand",
+              "name": "Incendio"
+            },
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, OBS, Virtual Camera, RTMP",
+            "description": "A real-time AI avatar platform for live selling with product catalog knowledge, automated Q&A, human takeover control, livestream risk preflight, and post-live analytics.",
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/PreOrder",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://avatar.incendiollc.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a real-time AI avatar for live selling?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A real-time AI avatar for live selling is a virtual host that can present products, respond to viewer questions, and guide shoppers during a livestream. Unlike pre-recorded avatar videos, it connects live comments, product knowledge, speech generation, avatar animation, and operator controls into one workflow."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Incendio Avatar answer customer questions in real time?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Incendio Avatar is designed to classify live comments, retrieve relevant product facts, generate sales-aware answers, synthesize speech, and animate the avatar while giving operators approval and takeover controls for sensitive moments."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Incendio Avatar replace human livestream hosts?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Incendio Avatar is built for human-in-the-loop live commerce. It can handle routine presentation and product Q&A, while a human operator can take over responses, product flow, or livestream mode when higher judgment is needed."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <canvas class="signal-canvas" id="signalCanvas" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Incendio Avatar home">
+        <span class="brand-mark"></span>
+        <span><strong>Incendio</strong> Avatar</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#product">Product</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#technology">Technology</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="#demo">Request Demo</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/ai-avatar-live-commerce-hero.png" alt="">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Real-time AI avatar for live selling</p>
+          <h1 id="hero-title">Turn every product catalog into a live AI sales host.</h1>
+          <p class="hero-copy">Incendio Avatar, by Incendio LLC, helps online sellers run interactive product livestreams with a virtual host that presents products, answers viewer questions, triggers human takeover, and learns from every live session.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#demo">Request a Demo</a>
+            <a class="button secondary" href="#product">See the System</a>
+          </div>
+          <dl class="hero-metrics" aria-label="Product performance indicators">
+            <div>
+              <dt>&lt;650ms</dt>
+              <dd>target response handoff</dd>
+            </div>
+            <div>
+              <dt>24/7</dt>
+              <dd>demo-ready avatar host</dd>
+            </div>
+            <div>
+              <dt>42%</dt>
+              <dd>fewer unanswered questions</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="answer-band" aria-label="Direct answer">
+        <div class="section-inner answer-grid">
+          <div>
+            <p class="eyebrow">Direct answer for buyers and AI search</p>
+            <h2>What is a real-time AI avatar for live selling?</h2>
+          </div>
+          <p>A real-time AI avatar for live selling is a virtual host that can present products, respond to viewer questions, and guide shoppers during a livestream. Unlike pre-recorded avatar videos, it connects live comments, product knowledge, speech generation, avatar animation, and operator controls into one workflow.</p>
+        </div>
+      </section>
+
+      <section class="section" id="product">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">AI livestream host platform</p>
+            <h2>Not just an avatar generator. A live commerce operating system.</h2>
+            <p>Incendio Avatar combines the runtime pieces sellers need to operate product demos at scale: catalog knowledge, sales scripts, comment intelligence, stream output, risk controls, human override, and analytics.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>Real-Time Avatar Host</h3>
+              <p>A brand-safe virtual presenter speaks, reacts, and moves with synchronized speech and facial animation during live product demos.</p>
+            </article>
+            <article class="feature">
+              <h3>Product Knowledge Engine</h3>
+              <p>Connect catalog data, variants, pricing, shipping rules, promotion copy, inventory notes, and FAQs for accurate live answers.</p>
+            </article>
+            <article class="feature">
+              <h3>Live Comment Understanding</h3>
+              <p>Detect product questions, coupon requests, purchase intent, price objections, support issues, and comments that need escalation.</p>
+            </article>
+            <article class="feature">
+              <h3>Human Takeover Control</h3>
+              <p>Let AI handle routine flow while operators approve sensitive replies, change products, pause automation, or speak directly.</p>
+            </article>
+            <article class="feature">
+              <h3>Platform Risk Preflight</h3>
+              <p>Review claims, restricted terms, repeated scripts, disclosure language, output stability, and live-room readiness before launch.</p>
+            </article>
+            <article class="feature">
+              <h3>Post-Live Intelligence</h3>
+              <p>Summarize unanswered questions, product interest, objection patterns, script gaps, and the best improvements for the next stream.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark-panel" id="workflow">
+        <div class="section-inner">
+          <div class="section-heading compact">
+            <p class="eyebrow">Operating workflow</p>
+            <h2>From catalog import to post-live optimization.</h2>
+          </div>
+          <div class="workflow">
+            <div class="workflow-step">
+              <h3>Import catalog</h3>
+              <p>Products, pricing, variants, policies, selling points, and FAQ data become structured live-selling knowledge.</p>
+            </div>
+            <div class="workflow-step">
+              <h3>Generate scripts</h3>
+              <p>The sales planner creates intros, product transitions, objection handling, promotion lines, and reusable talk tracks.</p>
+            </div>
+            <div class="workflow-step">
+              <h3>Configure host</h3>
+              <p>Pick avatar style, voice mode, captions, product overlays, scene order, and stream output through OBS or RTMP.</p>
+            </div>
+            <div class="workflow-step">
+              <h3>Go live</h3>
+              <p>Comments are interpreted in real time, answers are grounded in catalog data, and the avatar responds on stream.</p>
+            </div>
+            <div class="workflow-step">
+              <h3>Take over</h3>
+              <p>Operators can approve, edit, mute, switch mode, change product focus, or manually answer high-value questions.</p>
+            </div>
+            <div class="workflow-step">
+              <h3>Improve</h3>
+              <p>Analytics update scripts, product FAQs, reply rules, and training data for the next livestream.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section" id="technology">
+        <div class="section-inner split">
+          <div>
+            <p class="eyebrow">Low-latency runtime architecture</p>
+            <h2>A pipeline built for live answers, not offline video.</h2>
+            <p>Incendio Avatar is designed around the time pressure of live commerce: comment events, retrieval, sales planning, speech synthesis, lip sync, moderation, and stream output all need to move as one system.</p>
+            <ul class="check-list">
+              <li>Comment ingestion and priority scoring</li>
+              <li>Product RAG for factual, catalog-grounded answers</li>
+              <li>Sales dialogue planner with objection handling</li>
+              <li>TTS, lip sync, avatar rendering, and scene compositor</li>
+              <li>OBS, browser source, virtual camera, and RTMP output roadmap</li>
+            </ul>
+          </div>
+          <div class="architecture" aria-label="Runtime architecture diagram">
+            <div class="node input">Live comments</div>
+            <div class="node">Intent + risk</div>
+            <div class="node">Product knowledge</div>
+            <div class="node">Sales planner</div>
+            <div class="node">TTS + lip sync</div>
+            <div class="node output">Avatar stream</div>
+            <div class="arch-core">
+              <span>Runtime Orchestrator</span>
+              <strong>AI host loop</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section evidence">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Operator console preview</p>
+            <h2>Give teams control when automation meets a real audience.</h2>
+          </div>
+          <div class="console">
+            <div class="console-top">
+              <span class="status live">Live room active</span>
+              <span>Product: Foldable LED Makeup Mirror</span>
+              <span>AI confidence 91%</span>
+            </div>
+            <div class="console-grid">
+              <div class="console-pane avatar-pane">
+                <div class="avatar-screen">
+                  <span class="avatar-face"></span>
+                  <p>Explaining product benefit</p>
+                </div>
+              </div>
+              <div class="console-pane">
+                <h3>Question Queue</h3>
+                <ul class="event-list">
+                  <li><span>High intent</span> "Does it ship before Friday?"</li>
+                  <li><span>Price</span> "Is the coupon still active?"</li>
+                  <li><span>Fit</span> "Will this work for travel?"</li>
+                </ul>
+              </div>
+              <div class="console-pane">
+                <h3>Takeover</h3>
+                <div class="takeover-grid">
+                  <button>Approve</button>
+                  <button>Edit reply</button>
+                  <button>Switch product</button>
+                  <button class="danger">Human live</button>
+                </div>
+              </div>
+              <div class="console-pane">
+                <h3>Risk Preflight</h3>
+                <div class="risk-line"><span></span> Claims reviewed</div>
+                <div class="risk-line"><span></span> Sensitive words clear</div>
+                <div class="risk-line"><span></span> Stream output stable</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="use-cases">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Use cases</p>
+            <h2>Built for sellers who need more live selling capacity.</h2>
+          </div>
+          <div class="use-case-grid">
+            <article>
+              <h3>Small e-commerce sellers</h3>
+              <p>Run product demos without being on camera every day. Keep a human in the loop for VIP questions and closing moments.</p>
+            </article>
+            <article>
+              <h3>TikTok Shop-style workflows</h3>
+              <p>Support high-frequency product demos, rapid comment Q&A, risk awareness, and social commerce operating rhythms.</p>
+            </article>
+            <article>
+              <h3>Shopify stores</h3>
+              <p>Turn product pages, FAQs, reviews, and promotions into an interactive livestream sales assistant.</p>
+            </article>
+            <article>
+              <h3>Agencies and operators</h3>
+              <p>Manage scripts, rooms, avatars, product queues, and post-live insights across multiple brands or storefronts.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section comparison">
+        <div class="section-inner">
+          <div class="section-heading compact">
+            <p class="eyebrow">Comparison</p>
+            <h2>Real-time avatar vs. common alternatives.</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Option</th>
+                  <th>Best for</th>
+                  <th>Limitation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Human livestream host</td>
+                  <td>High-touch selling and emotional connection</td>
+                  <td>Expensive, hard to scale, limited availability</td>
+                </tr>
+                <tr>
+                  <td>Pre-recorded avatar video</td>
+                  <td>Reusable product explainers</td>
+                  <td>Cannot answer real viewers in the moment</td>
+                </tr>
+                <tr>
+                  <td>Traditional chatbot</td>
+                  <td>Text support and simple FAQ automation</td>
+                  <td>No visual selling presence or live-room flow</td>
+                </tr>
+                <tr>
+                  <td>Incendio Avatar</td>
+                  <td>Scalable live selling with visual hosting and real-time Q&A</td>
+                  <td>Requires product data, latency control, and operator policy setup</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">FAQ</p>
+            <h2>Answers for buyers, operators, and technical evaluators.</h2>
+          </div>
+          <div class="faq-grid">
+            <details open>
+              <summary>Can the AI avatar answer customer questions in real time?</summary>
+              <p>Yes. The system is designed to ingest live comments, classify intent, retrieve product facts, generate a sales-aware response, synthesize speech, and animate the avatar. Sensitive responses can require operator approval.</p>
+            </details>
+            <details>
+              <summary>How is this different from a pre-recorded avatar video?</summary>
+              <p>Pre-recorded video repeats a fixed message. Incendio Avatar is designed for interactive selling: viewer comments, product knowledge, risk checks, human takeover, and post-live learning all happen around the avatar.</p>
+            </details>
+            <details>
+              <summary>Can it work with TikTok Shop or Shopify sellers?</summary>
+              <p>The product is designed for social commerce and e-commerce workflows, including TikTok Shop-style selling and Shopify catalog-driven demos. Specific platform connectors depend on rollout stage and account requirements.</p>
+            </details>
+            <details>
+              <summary>Does the system include compliance controls?</summary>
+              <p>Incendio Avatar includes a risk preflight concept for claims, sensitive words, repeated scripts, disclosure language, and output readiness. Operators can also take over whenever judgment is needed.</p>
+            </details>
+            <details>
+              <summary>What integrations are planned?</summary>
+              <p>The roadmap includes OBS, browser source, virtual camera, RTMP output, product catalog import, live chat ingestion, and commerce platform workflows for sellers and agencies.</p>
+            </details>
+            <details>
+              <summary>Who should join the beta?</summary>
+              <p>Online sellers, TikTok Shop-style operators, Shopify merchants, agencies, and brands that want frequent live product demos without keeping a human host on camera all day.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section demo" id="demo">
+        <div class="section-inner demo-panel">
+          <div>
+            <p class="eyebrow">Beta access</p>
+            <h2>Build your first AI avatar livestream workflow.</h2>
+            <p>Request a pilot if you sell online, manage live commerce campaigns, or want to test a real-time AI product demo host with human takeover control.</p>
+          </div>
+          <form class="lead-form" action="mailto:contact@incendiollc.com" method="post" enctype="text/plain">
+            <label>
+              Work email
+              <input type="email" name="email" placeholder="you@company.com" required>
+            </label>
+            <label>
+              Selling platform
+              <select name="platform" required>
+                <option value="">Select one</option>
+                <option>TikTok Shop-style live selling</option>
+                <option>Shopify store</option>
+                <option>Amazon Live</option>
+                <option>Instagram or YouTube Live</option>
+                <option>Agency / multiple brands</option>
+              </select>
+            </label>
+            <label>
+              Biggest live-selling bottleneck
+              <textarea name="bottleneck" rows="4" placeholder="Staffing, scripts, Q&A, compliance, output setup..." required></textarea>
+            </label>
+            <button class="button primary" type="submit">Request Demo</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-grid">
+        <div>
+          <a class="brand" href="#top" aria-label="Incendio Avatar home">
+            <span class="brand-mark"></span>
+            <span><strong>Incendio</strong> Avatar</span>
+          </a>
+          <p>A product by Incendio LLC for real-time AI avatar live selling, e-commerce product demos, and human-in-the-loop livestream operations.</p>
+        </div>
+        <div>
+          <h2>Category</h2>
+          <p>Real-time AI avatar for live selling</p>
+          <p>AI livestream host for e-commerce</p>
+          <p>Low-latency AI avatar system for live commerce</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
